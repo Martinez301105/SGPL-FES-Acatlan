@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico del Sistema de Gestión y Préstamo de Libros de la FES Acatlán, UNAM.">
+  <meta name="theme-color" content="#142b45">
+  <title>Comprobante digital | SGPL · FES Acatlán</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <aside class="sidebar" id="main-navigation" aria-label="Menú del sistema">
+    <a class="brand" href="index.html" aria-label="SGPL, página de entrada">
+      <span class="brand-mark"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span>
+      <span><strong>SGPL</strong><small>BIBLIOTECA UNIVERSITARIA</small></span>
+    </a>
+    <div class="institution"><strong>FES Acatlán</strong>Universidad Nacional Autónoma de México</div>
+    <p class="nav-caption">ESPACIO DE BIBLIOTECA</p>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a class="nav-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3h6v18h-6M3 12h12m-5-5 5 5-5 5"/></svg><span>Inicio de sesión</span></a>
+      <a class="nav-link" href="catalogo.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Catálogo</span></a>
+      <a class="nav-link" href="validar-usuario.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 12-5m1 5 3 3 4-6"/></svg><span>Validar usuario</span></a>
+      <a class="nav-link" href="prestamo.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 2h6v5H9zM8 12h8m-8 4h5"/></svg><span>Registro de préstamo</span></a>
+      <a class="nav-link" href="comprobante.html" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h14v19l-3-2-4 2-4-2-3 2V3Zm4 5h6m-6 4h6m-6 4h3"/></svg><span>Comprobante digital</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-note"><strong>Un espacio para aprender.</strong>Consulta, explora y acerca el conocimiento a tu comunidad.</div>
+      <p class="sidebar-foot">UNAM · FES ACATLÁN<br>PROTOTIPO ACADÉMICO / 2026</p>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="breadcrumb"><span>Biblioteca</span><span class="crumb-slash" aria-hidden="true">/</span><span>Comprobante digital</span></div>
+      </div>
+      <div class="topbar-right"><span class="demo-tag">MODO DEMOSTRACIÓN</span><span class="avatar" aria-label="Entorno académico">AC</span></div>
+    </header>
+    <main id="contenido">
+      <div class="page-heading">
+        <div><p class="eyebrow">CONSTANCIA DEL PRÉSTAMO</p><h1>Los detalles, en un solo lugar.</h1><p>Consulta un comprobante por su número y revisa los datos de la operación.</p></div>
+        <span class="step-label">05 / 05</span>
+      </div>
+      <noscript><div class="message error">Activa JavaScript para usar las consultas y los formularios de demostración. Puedes navegar entre todas las pantallas mediante el menú.</div></noscript>
+
+      <div class="two-columns">
+        <div>
+          <article class="receipt" id="receipt-card" aria-labelledby="receipt-number">
+            <header class="receipt-head"><div><div class="receipt-brand"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg> SGPL</div><p>FES ACATLÁN · UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</p></div><span class="badge neutral">Demostración</span></header>
+            <div class="receipt-content">
+              <div class="receipt-title"><div><p class="eyebrow">COMPROBANTE DIGITAL DE PRÉSTAMO</p><h2 id="receipt-number">DEMO-2026-001</h2></div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h14v19l-3-2-4 2-4-2-3 2V3Zm4 5h6m-6 4h6m-6 4h3"/></svg></div>
+              <dl class="data-list"><div><dt>USUARIO</dt><dd id="receipt-name">Mariana López García</dd></div><div><dt>NÚMERO DE CUENTA O TRABAJADOR</dt><dd id="receipt-user">321000123</dd></div><div><dt>IDENTIFICADOR DEL EJEMPLAR</dt><dd id="receipt-copy">AC-ING-001</dd></div><div><dt>FECHA DE SOLICITUD</dt><dd id="receipt-requested">24/10/2026</dd></div><div class="full"><dt>FECHA Y HORA DE CONFIRMACIÓN · CIUDAD DE MÉXICO</dt><dd id="receipt-confirmed">24/10/2026 · 10:30:00</dd></div></dl>
+              <div class="receipt-book"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg><div><h3 id="receipt-title">Ingeniería de software</h3><p id="receipt-author">Ian Sommerville</p></div></div>
+              <div class="due-date"><div><p>FECHA LÍMITE DE DEVOLUCIÓN</p><strong id="receipt-due">29/10/2026</strong></div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 2h6v5H9zM8 12h8m-8 4h5"/></svg></div>
+              <p class="field-hint" style="margin-top:16px">Documento de ejemplo sin validez institucional. No acredita un préstamo ni una autorización.</p>
+            </div>
+            <footer class="receipt-bottom"><span>Código ilustrativo: <code id="receipt-code">EJEMPLO-SGPL-001</code></span><span>Sin mecanismo de verificación real</span></footer>
+          </article>
+          <div class="receipt-actions" id="receipt-actions"><a class="btn secondary" href="prestamo.html">Nuevo ejemplo</a><button class="btn" type="button" id="print-receipt"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 8V3h10v5M7 17H3V8h18v9h-4M7 14h10v8H7zM17 11h.1"/></svg> Imprimir comprobante</button></div>
+        </div>
+        <div class="stack receipt-search">
+          <section class="panel" aria-labelledby="receipt-search-title"><div class="panel-body">
+            <div class="section-heading"><span class="icon-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></span><h2 id="receipt-search-title">Consultar comprobante</h2></div>
+            <p class="section-subtitle">Ingresa el número de préstamo de demostración.</p>
+            <form id="receipt-form" action="comprobante.html" method="get">
+              <div class="field"><label for="receipt-query">Número de préstamo <span class="required">*</span></label><input id="receipt-query" name="numero" type="text" required maxlength="20" placeholder="DEMO-2026-001" aria-describedby="receipt-help"><span class="field-hint" id="receipt-help">Consulta el ejemplo fijo o el último generado en esta pestaña.</span></div>
+              <div class="form-actions"><button class="btn wide" type="submit"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg> Consultar comprobante</button></div>
+              <div class="sample-line">Ejemplo: <button class="sample-chip" id="sample-receipt" type="button">DEMO-2026-001</button></div>
+              <div class="message" id="receipt-message" role="status" aria-live="polite" hidden></div>
+            </form>
+          </div></section>
+          <div class="notice"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></svg><p><strong>Conserva tu ejemplo.</strong> Puedes imprimir esta vista o guardarla como PDF desde el diálogo de impresión de tu navegador. El código mostrado es ilustrativo.</p></div>
+        </div>
+      </div>
+
+    </main>
+    <footer class="page-footer"><span>© 2026 SGPL · FES Acatlán, UNAM</span><span>Prototipo académico · Datos ficticios · Sin validez institucional</span></footer>
+  </div>
+</body>
+</html>

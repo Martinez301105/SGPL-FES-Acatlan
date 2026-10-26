@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico del Sistema de Gestión y Préstamo de Libros de la FES Acatlán, UNAM.">
+  <meta name="theme-color" content="#142b45">
+  <title>Validar usuario | SGPL · FES Acatlán</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <aside class="sidebar" id="main-navigation" aria-label="Menú del sistema">
+    <a class="brand" href="index.html" aria-label="SGPL, página de entrada">
+      <span class="brand-mark"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span>
+      <span><strong>SGPL</strong><small>BIBLIOTECA UNIVERSITARIA</small></span>
+    </a>
+    <div class="institution"><strong>FES Acatlán</strong>Universidad Nacional Autónoma de México</div>
+    <p class="nav-caption">ESPACIO DE BIBLIOTECA</p>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a class="nav-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3h6v18h-6M3 12h12m-5-5 5 5-5 5"/></svg><span>Inicio de sesión</span></a>
+      <a class="nav-link" href="catalogo.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Catálogo</span></a>
+      <a class="nav-link" href="validar-usuario.html" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 12-5m1 5 3 3 4-6"/></svg><span>Validar usuario</span></a>
+      <a class="nav-link" href="prestamo.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 2h6v5H9zM8 12h8m-8 4h5"/></svg><span>Registro de préstamo</span></a>
+      <a class="nav-link" href="comprobante.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h14v19l-3-2-4 2-4-2-3 2V3Zm4 5h6m-6 4h6m-6 4h3"/></svg><span>Comprobante digital</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-note"><strong>Un espacio para aprender.</strong>Consulta, explora y acerca el conocimiento a tu comunidad.</div>
+      <p class="sidebar-foot">UNAM · FES ACATLÁN<br>PROTOTIPO ACADÉMICO / 2026</p>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="breadcrumb"><span>Biblioteca</span><span class="crumb-slash" aria-hidden="true">/</span><span>Validar usuario</span></div>
+      </div>
+      <div class="topbar-right"><span class="demo-tag">MODO DEMOSTRACIÓN</span><span class="avatar" aria-label="Entorno académico">AC</span></div>
+    </header>
+    <main id="contenido">
+      <div class="page-heading">
+        <div><p class="eyebrow">ATENCIÓN A LA COMUNIDAD</p><h1>Validación de usuario</h1><p>Consulta la información del usuario antes de capturar un préstamo.</p></div>
+        <span class="step-label">03 / 05</span>
+      </div>
+      <noscript><div class="message error">Activa JavaScript para usar las consultas y los formularios de demostración. Puedes navegar entre todas las pantallas mediante el menú.</div></noscript>
+
+      <div class="two-columns">
+        <div class="stack">
+          <section class="panel" aria-labelledby="validation-title"><div class="panel-body">
+            <div class="section-heading"><span class="icon-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 12-5m1 5 3 3 4-6"/></svg></span><h2 id="validation-title">Consulta de usuario</h2></div>
+            <p class="section-subtitle">Ingresa un número de cuenta o de trabajador ficticio.</p>
+            <form id="validation-form" action="validar-usuario.html" method="get">
+              <div class="field"><label for="user-id">Número de cuenta o trabajador <span class="required">*</span></label><input id="user-id" name="id_usuario" type="text" required maxlength="15" placeholder="Ej. 321000123" aria-describedby="validation-help"><span class="field-hint" id="validation-help">Consulta uno de los dos expedientes de demostración.</span></div>
+              <div class="sample-line">Probar con: <button class="sample-chip" type="button" data-user-sample="321000123">321000123</button><button class="sample-chip" type="button" data-user-sample="TRAB-042">TRAB-042</button></div>
+              <div class="form-actions"><button class="btn" type="submit"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg> Consultar usuario</button></div>
+              <div class="message" id="validation-message" role="status" aria-live="polite" hidden></div>
+            </form>
+          </div></section>
+          <section class="panel" aria-label="Resultado de la consulta">
+            <div id="user-empty" class="empty-state"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 12-5m1 5 3 3 4-6"/></svg><h3>El expediente aparecerá aquí</h3><p>Realiza una consulta para ver el estatus, los adeudos<br>y el límite de libros del usuario.</p></div>
+            <div class="panel-body" id="user-result" hidden>
+              <div class="profile-header"><div class="profile-avatar" id="profile-initials"></div><div><h3 id="profile-name"></h3><p class="small muted">Identificador: <span id="profile-id"></span></p></div><span class="badge" id="profile-status"></span></div>
+              <dl class="data-list"><div><dt>PERFIL DE USUARIO</dt><dd id="profile-type"></dd></div><div><dt>CORREO ELECTRÓNICO</dt><dd id="profile-email"></dd></div><div><dt>ADEUDO PENDIENTE</dt><dd id="profile-debt"></dd></div><div><dt>MONTO DE MULTA</dt><dd id="profile-amount"></dd></div></dl>
+              <div class="metrics"><div class="metric"><span>Préstamos activos</span><strong id="profile-active"></strong></div><div class="metric"><span>Límite de libros</span><strong id="profile-limit"></strong></div><div class="metric"><span>Cupo disponible</span><strong id="profile-available"></strong></div></div>
+              <div class="meter" aria-hidden="true"><div id="profile-meter"></div></div>
+              <p class="field-hint" style="margin-top:10px">Límites, saldos y conteos ficticios; no representan políticas institucionales.</p>
+              <div class="form-actions"><a class="btn" id="continue-loan" href="prestamo.html">Ir al formulario de préstamo <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></div>
+            </div>
+          </section>
+        </div>
+        <div class="stack">
+          <section class="panel"><div class="panel-body"><p class="eyebrow muted">ANTES DEL PRÉSTAMO</p><h2 style="margin-top:9px">Conoce el expediente</h2><ol class="info-list"><li><span class="number">01</span><div><strong>Identidad y estatus</strong>Consulta el perfil y la situación del registro del usuario.</div></li><li><span class="number">02</span><div><strong>Adeudos pendientes</strong>Visualiza un indicador y un monto de ejemplo.</div></li><li><span class="number">03</span><div><strong>Límite de ejemplares</strong>Revisa préstamos activos, límite y cupo ilustrativos.</div></li></ol></div></section>
+          <div class="notice"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></svg><p><strong>Consulta ilustrativa.</strong> Esta pantalla muestra expedientes predefinidos; no evalúa sanciones ni autoriza o rechaza préstamos.</p></div>
+        </div>
+      </div>
+
+    </main>
+    <footer class="page-footer"><span>© 2026 SGPL · FES Acatlán, UNAM</span><span>Prototipo académico · Datos ficticios · Sin validez institucional</span></footer>
+  </div>
+</body>
+</html>

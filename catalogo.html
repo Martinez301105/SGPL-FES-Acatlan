@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico del Sistema de Gestión y Préstamo de Libros de la FES Acatlán, UNAM.">
+  <meta name="theme-color" content="#142b45">
+  <title>Catálogo | SGPL · FES Acatlán</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <aside class="sidebar" id="main-navigation" aria-label="Menú del sistema">
+    <a class="brand" href="index.html" aria-label="SGPL, página de entrada">
+      <span class="brand-mark"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span>
+      <span><strong>SGPL</strong><small>BIBLIOTECA UNIVERSITARIA</small></span>
+    </a>
+    <div class="institution"><strong>FES Acatlán</strong>Universidad Nacional Autónoma de México</div>
+    <p class="nav-caption">ESPACIO DE BIBLIOTECA</p>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a class="nav-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3h6v18h-6M3 12h12m-5-5 5 5-5 5"/></svg><span>Inicio de sesión</span></a>
+      <a class="nav-link" href="catalogo.html" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Catálogo</span></a>
+      <a class="nav-link" href="validar-usuario.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 12-5m1 5 3 3 4-6"/></svg><span>Validar usuario</span></a>
+      <a class="nav-link" href="prestamo.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 2h6v5H9zM8 12h8m-8 4h5"/></svg><span>Registro de préstamo</span></a>
+      <a class="nav-link" href="comprobante.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h14v19l-3-2-4 2-4-2-3 2V3Zm4 5h6m-6 4h6m-6 4h3"/></svg><span>Comprobante digital</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-note"><strong>Un espacio para aprender.</strong>Consulta, explora y acerca el conocimiento a tu comunidad.</div>
+      <p class="sidebar-foot">UNAM · FES ACATLÁN<br>PROTOTIPO ACADÉMICO / 2026</p>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="breadcrumb"><span>Biblioteca</span><span class="crumb-slash" aria-hidden="true">/</span><span>Catálogo</span></div>
+      </div>
+      <div class="topbar-right"><span class="demo-tag">MODO DEMOSTRACIÓN</span><span class="avatar" aria-label="Entorno académico">AC</span></div>
+    </header>
+    <main id="contenido">
+      <div class="page-heading">
+        <div><p class="eyebrow">EXPLORA EL ACERVO</p><h1>Catálogo bibliográfico</h1><p>Encuentra una lectura, una referencia o el inicio de una nueva idea.</p></div>
+        <span class="step-label">02 / 05</span>
+      </div>
+      <noscript><div class="message error">Activa JavaScript para usar las consultas y los formularios de demostración. Puedes navegar entre todas las pantallas mediante el menú.</div></noscript>
+
+      <section class="catalog-hero" aria-labelledby="catalog-hero-title">
+        <div><p class="eyebrow">EL CONOCIMIENTO, A TU ALCANCE</p><h2 id="catalog-hero-title">Cada búsqueda abre<br>una nueva posibilidad.</h2><p>Explora el catálogo de ejemplo y encuentra materiales para tu formación universitaria.</p></div>
+        <div class="book-art" aria-hidden="true"><span class="art-book"></span><span class="art-book"></span><span class="art-book"></span><span class="art-book"></span><span class="art-book"></span></div>
+      </section>
+      <section class="panel catalog-search" aria-labelledby="search-title">
+        <div class="panel-body">
+          <div class="section-heading"><span class="icon-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></span><h2 id="search-title">Busca tu próximo libro</h2></div>
+          <p class="section-subtitle">Combina uno o varios filtros para afinar tu búsqueda.</p>
+          <form id="search-form" action="catalogo.html" method="get">
+            <div class="search-fields">
+              <div class="field"><label for="search-title-input">Título</label><input id="search-title-input" name="titulo" type="search" maxlength="150" placeholder="Nombre del libro"></div>
+              <div class="field"><label for="search-author">Autor</label><input id="search-author" name="autor" type="search" maxlength="120" placeholder="Nombre o apellido"></div>
+              <div class="field"><label for="search-isbn">ISBN</label><input id="search-isbn" name="isbn" type="search" maxlength="25" placeholder="Ej. 9786073206037"></div>
+              <div class="field"><label for="search-area">Área académica</label><select id="search-area" name="area"><option value="">Todas las áreas</option><option>Arquitectura</option><option>Ciencias sociales</option><option>Derecho</option><option>Humanidades</option><option>Ingeniería</option><option>Matemáticas</option></select></div>
+            </div>
+            <div class="search-bottom"><p>Sin filtros se muestran todos los libros de ejemplo.</p><div class="search-buttons"><button class="btn" type="submit"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg> Buscar libros</button><button class="btn secondary" type="reset">Limpiar</button></div></div>
+          </form>
+        </div>
+      </section>
+      <section aria-labelledby="results-title">
+        <div class="results-heading"><div><h2 id="results-title">Explora el catálogo</h2><p id="result-count" role="status" aria-live="polite"></p></div><span class="small muted">Acervo de demostración</span></div>
+        <div class="book-grid" id="book-grid"></div>
+      </section>
+      <div style="margin-top:22px"><div class="notice"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></svg><p>La disponibilidad y las ubicaciones son ilustrativas. Seleccionar un ejemplar solo precarga el formulario de préstamo.</p></div></div>
+
+    </main>
+    <footer class="page-footer"><span>© 2026 SGPL · FES Acatlán, UNAM</span><span>Prototipo académico · Datos ficticios · Sin validez institucional</span></footer>
+  </div>
+</body>
+</html>

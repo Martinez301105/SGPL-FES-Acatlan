@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico del Sistema de Gestión y Préstamo de Libros de la FES Acatlán, UNAM.">
+  <meta name="theme-color" content="#142b45">
+  <title>Registro de préstamo | SGPL · FES Acatlán</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <aside class="sidebar" id="main-navigation" aria-label="Menú del sistema">
+    <a class="brand" href="index.html" aria-label="SGPL, página de entrada">
+      <span class="brand-mark"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span>
+      <span><strong>SGPL</strong><small>BIBLIOTECA UNIVERSITARIA</small></span>
+    </a>
+    <div class="institution"><strong>FES Acatlán</strong>Universidad Nacional Autónoma de México</div>
+    <p class="nav-caption">ESPACIO DE BIBLIOTECA</p>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a class="nav-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3h6v18h-6M3 12h12m-5-5 5 5-5 5"/></svg><span>Inicio de sesión</span></a>
+      <a class="nav-link" href="catalogo.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Catálogo</span></a>
+      <a class="nav-link" href="validar-usuario.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 12-5m1 5 3 3 4-6"/></svg><span>Validar usuario</span></a>
+      <a class="nav-link" href="prestamo.html" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 2h6v5H9zM8 12h8m-8 4h5"/></svg><span>Registro de préstamo</span></a>
+      <a class="nav-link" href="comprobante.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h14v19l-3-2-4 2-4-2-3 2V3Zm4 5h6m-6 4h6m-6 4h3"/></svg><span>Comprobante digital</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-note"><strong>Un espacio para aprender.</strong>Consulta, explora y acerca el conocimiento a tu comunidad.</div>
+      <p class="sidebar-foot">UNAM · FES ACATLÁN<br>PROTOTIPO ACADÉMICO / 2026</p>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="breadcrumb"><span>Biblioteca</span><span class="crumb-slash" aria-hidden="true">/</span><span>Registro de préstamo</span></div>
+      </div>
+      <div class="topbar-right"><span class="demo-tag">MODO DEMOSTRACIÓN</span><span class="avatar" aria-label="Entorno académico">AC</span></div>
+    </header>
+    <main id="contenido">
+      <div class="page-heading">
+        <div><p class="eyebrow">CIRCULACIÓN DE MATERIALES</p><h1>Un nuevo préstamo, paso a paso.</h1><p>Captura los datos para generar un comprobante de demostración.</p></div>
+        <span class="step-label">04 / 05</span>
+      </div>
+      <noscript><div class="message error">Activa JavaScript para usar las consultas y los formularios de demostración. Puedes navegar entre todas las pantallas mediante el menú.</div></noscript>
+
+      <div class="two-columns">
+        <section class="panel" aria-labelledby="loan-title"><div class="panel-body">
+          <div class="section-heading"><span class="icon-box"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 2h6v5H9zM8 12h8m-8 4h5"/></svg></span><h2 id="loan-title">Datos del préstamo</h2></div>
+          <p class="section-subtitle">Los campos marcados con * son obligatorios en este prototipo.</p>
+          <form id="loan-form" action="comprobante.html" method="get">
+            <fieldset><legend>01 · Usuario y ejemplar</legend><div class="form-grid">
+              <div class="field"><label for="loan-user">Número de cuenta o trabajador <span class="required">*</span></label><input id="loan-user" name="id_usuario" required maxlength="15" type="text" placeholder="Ej. 321000123"></div>
+              <div class="field"><label for="loan-copy">Identificador del ejemplar <span class="required">*</span></label><input id="loan-copy" name="id_ejemplar" required maxlength="30" type="text" placeholder="Ej. AC-ING-001" aria-describedby="copy-help"><span class="field-hint" id="copy-help">Identifica una copia física; no es el ISBN ni la etiqueta RFID.</span></div>
+            </div></fieldset>
+            <hr class="form-divider">
+            <fieldset><legend>02 · Fechas y responsable</legend><div class="form-grid">
+              <div class="field"><label for="loan-requested">Fecha de solicitud <span class="required">*</span></label><input id="loan-requested" name="fecha_solicitud" type="date" required></div>
+              <div class="field"><label for="loan-due">Fecha límite de devolución <span class="required">*</span></label><input id="loan-due" name="fecha_entrega" type="date" required aria-describedby="due-help"><span class="field-hint" id="due-help">Fecha de entrega del material. Captura un plazo de ejemplo.</span></div>
+              <div class="field full"><label for="loan-librarian">Identificador del bibliotecario <span class="muted">(opcional)</span></label><input id="loan-librarian" name="id_bibliotecario" type="text" maxlength="15" placeholder="Ej. BIB-001"></div>
+            </div></fieldset>
+            <div class="form-actions"><button class="btn" type="submit">Generar comprobante de ejemplo <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button><button class="btn secondary" type="reset">Limpiar</button></div>
+            <div class="message" id="loan-message" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div></section>
+        <div class="stack">
+          <section class="panel"><div class="panel-body"><p class="eyebrow muted">RECORRE EL PROCESO</p><h2 style="margin-top:9px">Todo listo para probar</h2><p class="small muted" style="margin-top:10px">Completa los campos con un usuario y un ejemplar ficticios o carga un ejemplo.</p><ol class="info-list"><li><span class="number">01</span><div><strong>Captura la solicitud</strong>Relaciona al usuario con el identificador del ejemplar.</div></li><li><span class="number">02</span><div><strong>Indica las fechas</strong>Selecciona solicitud y devolución sin calcular reglas de préstamo.</div></li><li><span class="number">03</span><div><strong>Consulta el comprobante</strong>Revisa los datos capturados en la siguiente pantalla.</div></li></ol><div class="form-actions"><button class="btn secondary wide" id="fill-loan" type="button">Cargar datos de ejemplo</button></div></div></section>
+          <div class="notice"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></svg><p><strong>Registro de demostración.</strong> Los datos se conservan temporalmente en esta pestaña para mostrar el comprobante. No se registran operaciones reales ni se modifica un inventario.</p></div>
+        </div>
+      </div>
+
+    </main>
+    <footer class="page-footer"><span>© 2026 SGPL · FES Acatlán, UNAM</span><span>Prototipo académico · Datos ficticios · Sin validez institucional</span></footer>
+  </div>
+</body>
+</html>
